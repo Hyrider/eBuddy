@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".profile">
+
+    <View
+        android:id="@+id/viewMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/profileTitle"
+        app:layout_constraintEnd_toStartOf="@+id/profileTitle"
+        app:layout_constraintTop_toTopOf="@+id/profileTitle" />
+
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:fontFamily="@font/aleo_bold"
+        android:text="Profile"
+        android:textColor="#DDFFFFFF"
+        android:textSize="@dimen/_23sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/profileTitle"
+        app:layout_constraintStart_toEndOf="@+id/profileTitle"
+        app:layout_constraintTop_toTopOf="@+id/profileTitle" />
+
+    <TextView
+        android:id="@+id/nameInProfileTitle"
+        android:layout_width="@dimen/_78sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_69sdp"
+        android:fontFamily="@font/bentham"
+        android:text="Name :-"
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileTitle" />
+
+    <TextView
+        android:id="@+id/emailInProfileTitle"
+        android:layout_width="@dimen/_78sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_27sdp"
+        android:fontFamily="@font/bentham"
+        android:text="Name :-"
+
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintStart_toStartOf="@+id/nameInProfileTitle"
+        app:layout_constraintTop_toBottomOf="@+id/nameInProfileTitle" />
+
+    <TextView
+        android:id="@+id/nameInProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bentham"
+        android:text=""
+
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/nameInProfileTitle"
+        app:layout_constraintStart_toEndOf="@+id/nameInProfileTitle"
+        app:layout_constraintTop_toTopOf="@+id/nameInProfileTitle" />
+
+    <TextView
+        android:id="@+id/emailInProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bentham"
+        android:text=""
+
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/emailInProfileTitle"
+        app:layout_constraintStart_toEndOf="@+id/emailInProfileTitle"
+        app:layout_constraintTop_toTopOf="@+id/emailInProfileTitle" />
+
+    <TextView
+        android:id="@+id/numberInProfileTitle"
+        android:layout_width="@dimen/_78sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_27sdp"
+        android:fontFamily="@font/bentham"
+
+        android:text="Number :"
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintStart_toStartOf="@+id/emailInProfileTitle"
+        app:layout_constraintTop_toBottomOf="@+id/emailInProfileTitle" />
+
+    <TextView
+        android:id="@+id/numberInProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/bentham"
+        android:text=""
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/numberInProfileTitle"
+        app:layout_constraintStart_toEndOf="@+id/numberInProfileTitle"
+        app:layout_constraintTop_toTopOf="@+id/numberInProfileTitle" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="132dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="@dimen/_100sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewMain"
+        app:srcCompat="@drawable/baseline_person_2_24" />
+
+    <Button
+        android:id="@+id/logoutInProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_75sdp"
+        android:text="Logout"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberInProfileTitle"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

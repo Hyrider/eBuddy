@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".inChat">
+
+
+
+    <View
+        android:id="@+id/viewMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/name_inChat"
+        app:layout_constraintStart_toEndOf="@+id/name_inChat"
+        app:layout_constraintTop_toTopOf="@+id/name_inChat" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/name_inChat"
+        app:layout_constraintEnd_toStartOf="@+id/name_inChat"
+        app:layout_constraintTop_toTopOf="@+id/name_inChat" />
+
+
+    <ImageView
+        android:id="@+id/noExpense"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_170sdp"
+        android:src="@drawable/money1"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_inChat" />
+
+    <TextView
+        android:id="@+id/noExpense1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/bentham"
+        android:gravity="center"
+        android:text="YOU ARE PERFECT!"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintTop_toBottomOf="@+id/noExpense2"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/noExpense2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bentham"
+        android:gravity="center"
+        android:text="NO EXPENSES TO SPLIT"
+        android:textSize="@dimen/_17sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noExpense" />
+
+
+    <TextView
+        android:id="@+id/name_inChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_53sdp"
+        android:fontFamily="@font/aleo_bold"
+        android:text="Ritesh"
+        android:textColor="#DDFFFFFF"
+        android:textSize="@dimen/_23sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewMain" />
+
+    <ListView
+        android:id="@+id/lv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_500sdp"
+        android:layout_marginTop="@dimen/_78sdp"
+        app:layout_constraintBottom_toTopOf="@id/newExpense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_inChat"
+        tools:listitem="@layout/item_expense" />
+
+
+
+    <Button
+        android:id="@+id/newExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="115dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/jost_medium"
+        android:text="NEW EXPENSE"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_desc"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

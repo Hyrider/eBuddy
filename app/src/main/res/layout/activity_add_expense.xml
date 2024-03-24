@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addExpense"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".addExpense">
+
+        <include
+            android:id="@+id/toolbar_add_expense"
+            layout="@layout/toolbar_add_expense" />
+
+        <View
+            android:id="@+id/viewMain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_add_expense" />
+
+
+        <TextView
+            android:id="@+id/splitting_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/aleo_bold"
+            android:text="SPLITTING WITH:"
+            android:textColor="@color/blue_light"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_add_expense" />
+
+        <TextView
+            android:id="@+id/name_add_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/aleo_bold"
+            android:text="Ritesh"
+            android:textSize="@dimen/_23sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/splitting_with" />
+
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="@dimen/_225sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_110sdp"
+            android:ems="10"
+            android:fontFamily="@font/bentham"
+            android:gravity="center"
+            android:hint="Enter Amount"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_add_expense" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="@dimen/_225sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:ems="10"
+            android:fontFamily="@font/bentham"
+            android:gravity="center"
+            android:hint="Add Description"
+            android:inputType="text"
+            android:textSize="@dimen/_17sdp"
+            app:layout_constraintEnd_toEndOf="@+id/amount"
+
+            app:layout_constraintStart_toStartOf="@+id/amount"
+            app:layout_constraintTop_toBottomOf="@+id/amount" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/baseline_notes_24"
+            app:layout_constraintBottom_toBottomOf="@+id/description"
+            app:layout_constraintEnd_toStartOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/amount" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/rupee"
+            app:layout_constraintBottom_toBottomOf="@+id/amount"
+            app:layout_constraintEnd_toStartOf="@+id/amount"
+            app:layout_constraintTop_toTopOf="@+id/amount" />
+
+        <TextView
+            android:id="@+id/split_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/textbg"
+            android:fontFamily="@font/bentham"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="YOU PAID AND SPLIT EQUALLY"
+            android:textColor="@color/blue_light"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

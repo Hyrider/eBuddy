@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <!-- Semi-transparent background -->
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:alpha="0.9"/>
+
+    <!-- Pop-up content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/popup_bg"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginEnd="5dp"
+            android:background="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/splits"
+            app:layout_constraintEnd_toStartOf="@+id/splits"
+            app:layout_constraintTop_toTopOf="@+id/splits" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="5dp"
+            android:background="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/splits"
+            app:layout_constraintStart_toEndOf="@+id/splits"
+            app:layout_constraintTop_toTopOf="@+id/splits" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:src="@drawable/baseline_notes_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/paidBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PAID BY"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/nameInExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/aleo_bold"
+            android:gravity="center"
+            android:text="succes"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paidBy" />
+
+        <TextView
+            android:id="@+id/rs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs. "
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/amountInExpense"
+            app:layout_constraintEnd_toStartOf="@+id/amountInExpense"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintTop_toTopOf="@+id/amountInExpense" />
+
+        <TextView
+            android:id="@+id/amountInExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Amount"
+            android:textSize="@dimen/_19sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/nameInExpense"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/rs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameInExpense" />
+
+        <TextView
+            android:id="@+id/billOnYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Bill on You : "
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintEnd_toEndOf="@+id/billOnName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/billOnName"
+            app:layout_constraintTop_toBottomOf="@+id/billOnName" />
+
+        <TextView
+            android:id="@+id/nameInExpense2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/billOnName"
+            app:layout_constraintStart_toEndOf="@+id/billOnName"
+            app:layout_constraintTop_toTopOf="@+id/billOnName" />
+
+        <TextView
+            android:id="@+id/billOnName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:text="Bill on "
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amountInExpense" />
+
+        <TextView
+            android:id="@+id/amtOnName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="amtOnName"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/nameInExpense2"
+            app:layout_constraintStart_toEndOf="@+id/nameInExpense2"
+            app:layout_constraintTop_toTopOf="@+id/nameInExpense2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/amtOnYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="amtOnYou"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/billOnYou"
+            app:layout_constraintStart_toEndOf="@+id/billOnYou"
+            app:layout_constraintTop_toTopOf="@+id/billOnYou"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/splits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/literata_semibold"
+            android:text="SPLITS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amountInExpense" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:background="@drawable/baseline_delete_outline_24"
+            android:text=""
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

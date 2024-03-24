@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textView" type="id" />
+    <item name="IPname" type="id" />
+    <item name="IPpass" type="id" />
+    <item name="titlePass" type="id" />
+    <item name="IPmobile" type="id" />
+    <item name="titleEmail" type="id" />
+    <item name="IPemail" type="id" />
+    <item name="titleName" type="id" />
+    <item name="titleMob" type="id" />
+</resources>

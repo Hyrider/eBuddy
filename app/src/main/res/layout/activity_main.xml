@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+
+    </include>
+
+    <View
+        android:id="@+id/viewMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_590sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/item_contact" />
+
+    <ImageView
+        android:id="@+id/noFriends"
+        android:layout_width="486dp"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_marginTop="@dimen/_175sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:srcCompat="@drawable/home1" />
+
+
+    <Button
+        android:id="@+id/addNewFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#005980"
+        android:fontFamily="@font/bentham"
+        android:gravity="center"
+        android:padding="2dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Add New Friends"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toEndOf="@+id/listview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noFriends" />
+
+
+    <Button
+        android:id="@+id/addNewFriends2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#005980"
+        android:fontFamily="@font/bentham"
+        android:gravity="center"
+        android:padding="2dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Add New Friends"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_19sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/listview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
