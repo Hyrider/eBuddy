@@ -47,7 +47,7 @@ public class signup extends AppCompatActivity {
     FirebaseFirestore store;
     String email, password,mob,name;
 
-    @Overrid
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
