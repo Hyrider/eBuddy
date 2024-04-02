@@ -164,6 +164,7 @@ public class signup extends AppCompatActivity {
             public void onClick(@NonNull View widget) {
                     Intent login = new Intent(signup.this, com.example.myapplication.login.class);
                     startActivity(login);
+                    finish();
             }
         };
 

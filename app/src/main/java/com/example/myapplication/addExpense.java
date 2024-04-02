@@ -46,6 +46,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class addExpense extends AppCompatActivity {
+    private static final int MAX_LIMIT = 1000000;
     EditText IPamount;
     EditText IPdescription;
     Float amount;
@@ -188,90 +189,92 @@ public class addExpense extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         stringAmount = IPamount.getText().toString();
-        amount=Float.parseFloat(stringAmount);
-        description = IPdescription.getText().toString();
-        if (item.getItemId() == R.id.done) {
-            if (TextUtils.isEmpty(stringAmount)) {
-                Toast.makeText(this, "Enter Amount", Toast.LENGTH_SHORT).show();
-                IPamount.requestFocus();
-                IPamount.setError("Enter Amount");
-            } else if (TextUtils.isEmpty(description)) {
-                Toast.makeText(this, "Add Description", Toast.LENGTH_SHORT).show();
-                IPdescription.requestFocus();
-                IPdescription.setError("Add Description");
-            }
-
-            if (!TextUtils.isEmpty(stringAmount) && !TextUtils.isEmpty(description)) {
-                if (split_options.getText() == "YOU PAID AND SPLIT EQUALLY") {
-                    DocumentReference documentReference=firestore.collection("records").document();
-                    Map<String,String> newRecord=new HashMap<>();
-                    amtPerHead=amount/2;
-                    newRecord.put("Payer's id",idP);
-                    newRecord.put("NonPayer's id",idNP);
-                    newRecord.put("Total Amount",String.valueOf(amount));
-                    newRecord.put("Bill on Payer", String.valueOf(amtPerHead));
-                    newRecord.put("Bill on Non-Payer", String.valueOf(amtPerHead));
-                    newRecord.put("Description",description);
-                    documentReference.set(newRecord);
-                    Intent back = new Intent();
-                    back.putExtra("inChatAmount",amtPerHead);
-                    back.putExtra("Payer's id",idP);
-                    setResult(RESULT_OK, back);
-                    finish();
-                } else if (split_options.getText()=="You Owed the Full Payment") {
-                    DocumentReference documentReference=firestore.collection("records").document();
-                    Map<String,String> newRecord=new HashMap<>();
-                    newRecord.put("Payer's id",idP);
-                    newRecord.put("NonPayer's id",idNP);
-                    newRecord.put("Total Amount",String.valueOf(amount));
-                    newRecord.put("Bill on Payer", "0");
-                    newRecord.put("Bill on Non-Payer",String.valueOf(amount));
-                    newRecord.put("Description",description);
-                    documentReference.set(newRecord);
-                    Intent back = new Intent();
-                    back.putExtra("inChatAmount",amount);
-                    back.putExtra("Payer's id",idP);
-                    setResult(RESULT_OK, back);
-                    finish();
-                } else if (split_options.getText()==splitEqual) {
-                    DocumentReference documentReference=firestore.collection("records").document();
-                    Map<String,String> newRecord=new HashMap<>();
-                    amtPerHead=amount/2;
-                    Toast.makeText(this, "."+amt, Toast.LENGTH_SHORT).show();
-                    newRecord.put("Payer's id",idP);
-                    newRecord.put("NonPayer's id",idNP);
-                    newRecord.put("Total Amount",String.valueOf(amount));
-                    newRecord.put("Bill on Payer", String.valueOf(amtPerHead));
-                    newRecord.put("Bill on Non-Payer", String.valueOf(amtPerHead));
-                    newRecord.put("Description",description);
-                    documentReference.set(newRecord);
-                    Intent back = new Intent();
-                    back.putExtra("inChatAmount",amtPerHead);
-                    back.putExtra("Payer's id",idP);
-                    setResult(RESULT_OK, back);
-                    finish();
+        amount = Float.parseFloat(stringAmount);
+        if (amount > MAX_LIMIT) {
+            Toast.makeText(this, "Maximum Limit is 1000000", Toast.LENGTH_SHORT).show();
+        } else {
+            description = IPdescription.getText().toString();
+            if (item.getItemId() == R.id.done) {
+                if (TextUtils.isEmpty(stringAmount)) {
+                    Toast.makeText(this, "Enter Amount", Toast.LENGTH_SHORT).show();
+                    IPamount.requestFocus();
+                    IPamount.setError("Enter Amount");
+                } else if (TextUtils.isEmpty(description)) {
+                    Toast.makeText(this, "Add Description", Toast.LENGTH_SHORT).show();
+                    IPdescription.requestFocus();
+                    IPdescription.setError("Add Description");
                 }
-                else if(split_options.getText()==payer_name){
-                    DocumentReference documentReference=firestore.collection("records").document();
-                    Map<String,String> newRecord=new HashMap<>();
-                    newRecord.put("Payer's id",idP);
-                    newRecord.put("NonPayer's id",idNP);
-                    newRecord.put("Total Amount",String.valueOf(amount));
-                    newRecord.put("Bill on Payer", "0");
-                    newRecord.put("Bill on Non-Payer",String.valueOf(amount));
-                    newRecord.put("Description",description);
-                    documentReference.set(newRecord);
-                    Intent back = new Intent();
-                    back.putExtra("inChatAmount",amount);
-                    back.putExtra("Payer's id",idP);
-                    setResult(RESULT_OK, back);
-                    finish();
-                }
-            }
-        }
-        else {
-            onBackPressed();
 
+                if (!TextUtils.isEmpty(stringAmount) && !TextUtils.isEmpty(description)) {
+                    if (split_options.getText() == "YOU PAID AND SPLIT EQUALLY") {
+                        DocumentReference documentReference = firestore.collection("records").document();
+                        Map<String, String> newRecord = new HashMap<>();
+                        amtPerHead = amount / 2;
+                        newRecord.put("Payer's id", idP);
+                        newRecord.put("NonPayer's id", idNP);
+                        newRecord.put("Total Amount", String.valueOf(amount));
+                        newRecord.put("Bill on Payer", String.valueOf(amtPerHead));
+                        newRecord.put("Bill on Non-Payer", String.valueOf(amtPerHead));
+                        newRecord.put("Description", description);
+                        documentReference.set(newRecord);
+                        Intent back = new Intent();
+                        back.putExtra("inChatAmount", amtPerHead);
+                        back.putExtra("Payer's id", idP);
+                        setResult(RESULT_OK, back);
+                        finish();
+                    } else if (split_options.getText() == "You Owed the Full Payment") {
+                        DocumentReference documentReference = firestore.collection("records").document();
+                        Map<String, String> newRecord = new HashMap<>();
+                        newRecord.put("Payer's id", idP);
+                        newRecord.put("NonPayer's id", idNP);
+                        newRecord.put("Total Amount", String.valueOf(amount));
+                        newRecord.put("Bill on Payer", "0");
+                        newRecord.put("Bill on Non-Payer", String.valueOf(amount));
+                        newRecord.put("Description", description);
+                        documentReference.set(newRecord);
+                        Intent back = new Intent();
+                        back.putExtra("inChatAmount", amount);
+                        back.putExtra("Payer's id", idP);
+                        setResult(RESULT_OK, back);
+                        finish();
+                    } else if (split_options.getText() == splitEqual) {
+                        DocumentReference documentReference = firestore.collection("records").document();
+                        Map<String, String> newRecord = new HashMap<>();
+                        amtPerHead = amount / 2;
+                        Toast.makeText(this, "." + amt, Toast.LENGTH_SHORT).show();
+                        newRecord.put("Payer's id", idP);
+                        newRecord.put("NonPayer's id", idNP);
+                        newRecord.put("Total Amount", String.valueOf(amount));
+                        newRecord.put("Bill on Payer", String.valueOf(amtPerHead));
+                        newRecord.put("Bill on Non-Payer", String.valueOf(amtPerHead));
+                        newRecord.put("Description", description);
+                        documentReference.set(newRecord);
+                        Intent back = new Intent();
+                        back.putExtra("inChatAmount", amtPerHead);
+                        back.putExtra("Payer's id", idP);
+                        setResult(RESULT_OK, back);
+                        finish();
+                    } else if (split_options.getText() == payer_name) {
+                        DocumentReference documentReference = firestore.collection("records").document();
+                        Map<String, String> newRecord = new HashMap<>();
+                        newRecord.put("Payer's id", idP);
+                        newRecord.put("NonPayer's id", idNP);
+                        newRecord.put("Total Amount", String.valueOf(amount));
+                        newRecord.put("Bill on Payer", "0");
+                        newRecord.put("Bill on Non-Payer", String.valueOf(amount));
+                        newRecord.put("Description", description);
+                        documentReference.set(newRecord);
+                        Intent back = new Intent();
+                        back.putExtra("inChatAmount", amount);
+                        back.putExtra("Payer's id", idP);
+                        setResult(RESULT_OK, back);
+                        finish();
+                    }
+                }
+            } else {
+                onBackPressed();
+
+            }
         }
         return super.onOptionsItemSelected(item);
     }

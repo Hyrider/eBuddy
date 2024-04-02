@@ -33,8 +33,6 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        FirebaseUser currentUser=mAuth.getCurrentUser();
-
         TextView welcome_back=findViewById(R.id.welcome_back);
         TextView msg=findViewById(R.id.msg);
         EditText login_email=findViewById(R.id.login_IPemail);
@@ -73,6 +71,7 @@ public class login extends AppCompatActivity {
                                             editor.apply();
                                             Intent home = new Intent(login.this, MainActivity.class);
                                             startActivity(home);
+                                            finish();
                                         } else {
                                             Toast.makeText(login.this, "not verified", Toast.LENGTH_SHORT).show();
                                             store.collection("users").document(currentUser.getUid()).delete();
@@ -95,6 +94,7 @@ public class login extends AppCompatActivity {
             public void onClick(@NonNull View widget) {
                 Intent signup1 = new Intent(login.this, signup.class);
                 startActivity(signup1);
+                finish();
             }
         };
         spannableString.setSpan(signup,0,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
